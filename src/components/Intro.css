@@ -1,0 +1,11 @@
+.intro {
+  display:block;             /* put children in a row */
+  align-items: center;       /* vertically align */
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 16px;
+  max-width: 50%;
+  margin: 20px auto;
+  background: beige;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

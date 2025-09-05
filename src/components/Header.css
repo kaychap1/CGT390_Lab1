@@ -1,0 +1,21 @@
+.header {
+  display: flex;             /* put children in a row */
+  align-items: center;       /* vertically align */
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 16px;
+  max-width: 80%;
+  margin: 20px auto;
+  background: darkgreen;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: azure;
+}
+
+img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 5%;        /* space between image and text */
+}
+
+

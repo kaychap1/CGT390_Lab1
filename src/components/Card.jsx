@@ -1,10 +1,12 @@
 //import  img from
 import './Card.css'
-const Card = () => {
+const Card = ({name, description, image}) => {
     return(
         <>
         <div className="card">
-            <h2> News Article</h2><p>Something is happening right now you better look</p>
+            <img src={image} alt= "image"/>
+            <h2> {name}</h2>
+            <p>{description}</p>
 
         </div>
         </>

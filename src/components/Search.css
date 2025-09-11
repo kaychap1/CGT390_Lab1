@@ -1,0 +1,25 @@
+.Searchinput {
+    position: relative;
+    display: inline-block;
+
+  background-color: beige;
+  width: 50%;
+  height: 10%;
+  box-shadow: 0px 8px 16px 0px rgb(204, 204, 183);
+  z-index: 1;
+  list-style-type: none;
+  padding: 10px;
+  margin: 20px;
+
+}
+
+
+.Enter{
+    background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+
+}

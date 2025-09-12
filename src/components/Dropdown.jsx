@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import './Dropdown.css';
+import styles from './Dropdown.module.css';
 
 const Dropdown = ({ onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,12 +17,12 @@ const Dropdown = ({ onSelect }) => {
   };
 
   return (
-    <div className="dropdown">
-      <button onClick={toggleDropdown} className="dropdown-toggle">
+    <div className={styles.dropdown}>
+      <button onClick={toggleDropdown} className={styles["dropdown-toggle"]}>
         Positions
       </button>
       {isOpen && (
-        <ul className="dropdown-menu">
+        <ul className={styles["dropdown-menu"]}>
           <li onClick={() => handleSelect('All')}>All</li>
           <li onClick={() => handleSelect('Leader')}>Leader</li>
           <li onClick={() => handleSelect('Engineer')}>Engineer</li>

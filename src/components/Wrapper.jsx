@@ -1,7 +1,7 @@
 const Wrapper =({children}) => {
     return (
-        <div classname="section">
-            <div classname="container">{children}</div>
+        <div className="section">
+            <div className="container">{children}</div>
         </div>
 
 

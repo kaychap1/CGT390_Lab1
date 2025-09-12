@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import './Search.css';
+import styles from './Search.module.css';
 
 const Search = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState('');
@@ -23,18 +23,18 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-    <div className="search-container">
+    <div>
       <input
         type="text"
         placeholder="Search by name..."
         value={inputValue}
         onChange={handleInputChange}
-        className="Searchinput"
+        className={styles.Searchinput}
       />
-      <button onClick={handleSearch} className="Enter">
+      <button onClick={handleSearch} className={styles.Enter}>
         Enter
       </button>
-      <button onClick={handleReset} className="Reset">
+      <button onClick={handleReset} className={styles.Reset}>
         Reset
       </button>
     </div>

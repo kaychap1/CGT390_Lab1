@@ -23,7 +23,7 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <div className='searchBar'>
       <input
         type="text"
         placeholder="Search by name..."

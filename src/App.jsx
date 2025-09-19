@@ -9,15 +9,15 @@ import image1 from './images/image1.jpg';
 import image2 from './images/image2.jpg';
 import Dropdown from './components/Dropdown.jsx';
 import Search from './components/Search.jsx';
+import AddProfile from './components/AddProfile.jsx';
 
 function App() {
   const [selectedPosition, setSelectedPosition] = useState('All');
   const [searchValue, setSearchValue] = useState('');
-
-  const profiles = [
+  const [profiles, setProfiles] = useState([
     { name: 'john doe', description: 'Leader', image: image1 },
     { name: 'jane doe', description: 'Engineer', image: image2 },
-  ];
+  ]);
 
   // Handler for the dropdown selection
   const handlePositionSelect = (position) => {
@@ -27,6 +27,11 @@ function App() {
   // Handler for the search input
   const handleNameSearch = (name) => {
     setSearchValue(name.toLowerCase());
+  };
+
+  // Handler for adding a new profile
+  const handleAddProfile = (newProfile) => {
+    setProfiles([...profiles, newProfile]);
   };
 
   // Combined filter logic
@@ -43,6 +48,9 @@ function App() {
       </Wrapper>
       <Wrapper>
         <Intro />
+      </Wrapper>
+      <Wrapper>
+        <AddProfile onAddProfile={handleAddProfile} />
       </Wrapper>
       <Wrapper>
         {/* Pass the correct handlers to the components */}

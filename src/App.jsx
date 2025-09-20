@@ -10,6 +10,7 @@ import image2 from './images/image2.jpg';
 import Dropdown from './components/Dropdown.jsx';
 import Search from './components/Search.jsx';
 import AddProfile from './components/AddProfile.jsx';
+import FetchedCardsSection from './components/FetchedCardsSection.jsx';
 
 function App() {
   const [selectedPosition, setSelectedPosition] = useState('All');
@@ -55,7 +56,7 @@ function App() {
       <Wrapper>
         {/* Pass the correct handlers to the components */}
         <Search onSearch={handleNameSearch} />
-        <Dropdown onSelect={handlePositionSelect} />
+        <Dropdown onSelect={handlePositionSelect} options={['Leader', 'Engineer']} />
       </Wrapper>
       
       <div>
@@ -69,6 +70,7 @@ function App() {
           </Wrapper>
         ))}
       </div>
+      <FetchedCardsSection />
     </>
   );
 }

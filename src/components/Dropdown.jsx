@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from './Dropdown.module.css';
 
-const Dropdown = ({ onSelect }) => {
+const Dropdown = ({ onSelect, options }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -24,8 +24,9 @@ const Dropdown = ({ onSelect }) => {
       {isOpen && (
         <ul className={styles["dropdown-menu"]}>
           <li onClick={() => handleSelect('All')}>All</li>
-          <li onClick={() => handleSelect('Leader')}>Leader</li>
-          <li onClick={() => handleSelect('Engineer')}>Engineer</li>
+          {options && options.map((option, index) => (
+            <li key={index} onClick={() => handleSelect(option)}>{option}</li>
+          ))}
         </ul>
       )}
     </div>

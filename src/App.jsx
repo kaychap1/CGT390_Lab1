@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, Outlet } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header.jsx';
 import Card from './components/Card.jsx';
@@ -11,7 +11,8 @@ import image2 from './images/image2.jpg';
 import Dropdown from './components/Dropdown.jsx';
 import Search from './components/Search.jsx';
 import AddProfile from './components/AddProfile.jsx';
-import FetchedCardsSection from './components/FetchedCardsSection.jsx';
+import FetchedProfilesPage from './components/FetchedProfilesPage.jsx';
+import ProfileDetails from './components/ProfileDetails.jsx';
 
 function NotFound() {
   return (
@@ -57,7 +58,7 @@ function App() {
       <Wrapper>
         <Header />
         <nav>
-          <Link to="/">Home</Link> | <Link to="/about">About</Link>
+          <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/fetched-profiles">Fetched Profiles</Link>
         </nav>
       </Wrapper>
       
@@ -66,8 +67,10 @@ function App() {
         <Route path="/" element={
           <>
             <Wrapper>
+              
               <Search onSearch={handleNameSearch} />
               <Dropdown onSelect={handlePositionSelect} options={['Leader', 'Engineer']} />
+              <AddProfile onAddProfile={handleAddProfile} />
             </Wrapper>
             <div>
               {filteredProfiles.map((profile, index) => (
@@ -80,10 +83,13 @@ function App() {
                 </Wrapper>
               ))}
             </div>
-            <FetchedCardsSection />
           </>
         } />
         <Route path="/about" element={<Intro />} />
+        <Route path="/fetched-profiles" element={<Outlet />}>
+          <Route index element={<FetchedProfilesPage />} />
+          <Route path="profile/:id" element={<ProfileDetails />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
